@@ -1,5 +1,6 @@
-type ExampleEntity @entity {
+type Account @entity {
   id: ID!
-  count: BigInt!
-  admin: Bytes! # address
+  createdTimestamp: String!
+  address: String!
+  totalStaked: String!
 }

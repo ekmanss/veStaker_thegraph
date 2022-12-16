@@ -4,17 +4,15 @@ schema:
 dataSources:
   - kind: ethereum
     name: vyper
-    network: bsc
+    network: Binance
     source:
-      address: "0xe77cA7549567d9b231238977646009b25D2aa4bB"
+      address: "0x8264496C0495cC509B4Ea5ebf09df4ED6357e9f2"
       abi: vyper
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - CommitOwnership
-        - ApplyOwnership
         - Deposit
         - Withdraw
         - Supply
@@ -22,14 +20,8 @@ dataSources:
         - name: vyper
           file: ./abis/vyper.json
       eventHandlers:
-        - event: CommitOwnership(address)
-          handler: handleCommitOwnership
-        - event: ApplyOwnership(address)
-          handler: handleApplyOwnership
         - event: Deposit(indexed address,uint256,indexed uint256,int128,uint256)
           handler: handleDeposit
         - event: Withdraw(indexed address,uint256,uint256)
           handler: handleWithdraw
-        - event: Supply(uint256,uint256)
-          handler: handleSupply
       file: ./src/vyper.ts
