@@ -2,5 +2,6 @@ type Account @entity {
   id: ID!
   createdTimestamp: String!
   address: String!
+  lockTimestamp: String!
   totalStaked: String!
 }
