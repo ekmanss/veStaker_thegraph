@@ -8,6 +8,7 @@ dataSources:
     source:
       address: "0x8264496C0495cC509B4Ea5ebf09df4ED6357e9f2"
       abi: vyper
+      startBlock: 25210700
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
